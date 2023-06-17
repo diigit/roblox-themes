@@ -1,7 +1,9 @@
+local selectedTheme = 'Material Theme'
+
 local httpService = game:GetService('HttpService')
 local studioSettings = settings().Studio
 
-local url = `https://raw.githubusercontent.com/diigit/roblox-themes/main/Material%20Theme.json`
+local url = `https://raw.githubusercontent.com/diigit/roblox-themes/main/{httpService:UrlEncode(selectedTheme)}.json`
 
 local json = httpService:GetAsync(url)
 if not json then warn('Could not update theme! Invalid URL (Is the selected theme valid?)') end
